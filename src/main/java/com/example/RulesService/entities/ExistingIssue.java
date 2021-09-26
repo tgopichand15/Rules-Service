@@ -1,10 +1,10 @@
-package com.example.entities;
+package com.example.RulesService.entities;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="existing_issues")
-public class ExistingIssues {
+@Table(name="existing_issue")
+public class ExistingIssue {
 
     @Id
     @Column(name="id")
@@ -55,7 +55,7 @@ public class ExistingIssues {
 
     @Override
     public String toString() {
-        return "ExistingIssues{" +
+        return "ExistingIssue{" +
                 "id=" + id +
                 ", issueName='" + issueName + '\'' +
                 ", count=" + count +

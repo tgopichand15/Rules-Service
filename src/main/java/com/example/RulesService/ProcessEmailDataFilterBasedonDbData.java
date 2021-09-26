@@ -1,6 +1,6 @@
-package com.example;
+package com.example.RulesService;
 
-import org.springframework.beans.factory.annotation.Autowired;
+/*import org.springframework.beans.factory.annotation.Autowired;
 
 public class ProcessEmailDataFilterBasedonDbData {
 
@@ -48,4 +48,4 @@ public class ProcessEmailDataFilterBasedonDbData {
 
 
 
-}
+}*/

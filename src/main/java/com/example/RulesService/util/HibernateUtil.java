@@ -1,4 +1,4 @@
-package com.example.util;
+package com.example.RulesService.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;

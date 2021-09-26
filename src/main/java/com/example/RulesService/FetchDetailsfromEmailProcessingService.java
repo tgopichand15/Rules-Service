@@ -1,4 +1,4 @@
-package com.example;
+package com.example.RulesService;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -34,7 +34,7 @@ public class FetchDetailsfromEmailProcessingService {
         private String clientname;
 
 
-        public HashMap<String,Integer> fetchUnprocessedData(String clientname) {
+        public HashMap<String,Integer> fetchUnprocessedData() {
             Application application = eurekaClient.getApplication(EmailProcessingServiceApplication);
             InstanceInfo instanceInfo = application.getInstances().get(0);
             String url = "http://" + instanceInfo.getIPAddr() + ":" + instanceInfo.getPort() + "/" + clientname ;

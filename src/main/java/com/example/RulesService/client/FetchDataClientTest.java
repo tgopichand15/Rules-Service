@@ -1,10 +1,6 @@
-package com.example.client;
+package com.example.RulesService.client;
 
-import com.example.util.HibernateUtil;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-
-public class FetchDataClientTest {
+/*public class FetchDataClientTest {
 
 	public static void main(String[] args) {
 		/*Issues issues = null;
@@ -13,7 +9,7 @@ public class FetchDataClientTest {
 	    	System.out.println(issues);
 		} catch (HibernateException e) {
 			e.printStackTrace();
-		}*/
+		}
 
        public static Issues getCount(String Hostname,String issue){
             Query query = session.createQuery("SELECT count FROM Issues i WHERE i.host=:Hostname and i.issueType=:issue");
@@ -47,3 +43,4 @@ public class FetchDataClientTest {
 
 
     }
+*/

@@ -1,4 +1,4 @@
-package com.example.Rulesservice;
+package com.example.RulesService.Rulesservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
