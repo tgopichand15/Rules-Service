@@ -1,13 +1,19 @@
 package com.example.client;
 
-import com.example.RulesService.entities.ExistingIssues;
+import com.example.entities.ExistingIssue;
 import com.example.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
 import java.util.*;
 
 
+
+@Component
+@ComponentScan("com.example.client")
 public class SaveDataClient {
 
 	/*public static void main(String[] args) {
@@ -32,9 +38,9 @@ public class SaveDataClient {
 	}
 
 
-	private static List<ExistingIssues> getexistingIssues(){
+	private static List<ExistingIssue> getexistingIssues(){
 
-		List<ExistingIssues> issuesList=new ArrayList<ExistingIssues>();
+		List<ExistingIssue> issuesList=new ArrayList<ExistingIssue>();
 		try(Session session = HibernateUtil.getSessionFactory().openSession()) {
 			String hql = "select * from existing_issues";
 			Query query = session.createSQLQuery(hql);
@@ -49,8 +55,8 @@ public class SaveDataClient {
 
 	}
 	
-	private static ExistingIssues getIssue(){
-		ExistingIssues issues=new ExistingIssues();
+	private static ExistingIssue getIssue(){
+		ExistingIssue issues=new ExistingIssue();
 		issues.setIssueName("MemoryUnix");
 		issues.setTeamName("Unix");
 		issues.setCount(5);
@@ -63,7 +69,7 @@ public class SaveDataClient {
 			session.beginTransaction();
 			int id=(Integer)session.save(i);
 			System.out.println("Existing Issue is created  with Id::"+id);
-			session.getTransaction().commit()
+			session.getTransaction().commit();
 
 		} catch (HibernateException e) {
 			e.printStackTrace();
@@ -77,7 +83,7 @@ public class SaveDataClient {
 			for(ExistingIssue e : l) {
 				int id = (Integer) session.save(e);
 				System.out.println("Existing Issue is created  with Id::" + id);
-				session.getTransaction().commit()
+				session.getTransaction().commit();
 			}
 
 		} catch (HibernateException e) {
@@ -85,4 +91,11 @@ public class SaveDataClient {
 		}
 
 	}
+
+	public SaveDataClient(){
+		System.out.println("Test");
+	}
+
+
+
 }
