@@ -7,15 +7,13 @@ public class RulesServiceController {
 
     @Controller
     @Requestmapping("/issues_list")
-    public List<ExistingIssues> validEntries(){
+    public List<ExistingIssues> validEntries(FetchDataClient fetchdataclient){
 
         //process data from DB and finally create final entries for hashmap values hostname and issues name
-        @Autowired
-        private SaveDataClientTest savedataclienttest;
 
         //get existing issues from Db
 
-        List<ExistingIssues> issues=savedataclienttest.getexistingIssues();
+        List<ExistingIssues> issues=fetchdataclient.getAllExistingIssues();
 
         return issues;
     }

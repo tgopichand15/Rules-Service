@@ -1,4 +1,4 @@
-package com.example.RulesService.entities;
+package com.example.entities;
 
 import javax.persistence.*;
 

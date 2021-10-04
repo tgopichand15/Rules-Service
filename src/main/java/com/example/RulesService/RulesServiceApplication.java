@@ -2,6 +2,7 @@ package com.example.RulesService;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -22,5 +23,15 @@ public class RulesServiceApplication extends SpringBootServletInitializer {
 		LOGGER.info("Info level log message");
 		LOGGER.debug("Debug level log message");
 		LOGGER.error("Error level log message");
+
+
+		@Autowired
+		public AddExistingIssue addexistingIssue;
+
+		@Autowired
+		public SaveDataClient savedataclient;
+
+
+		addexistingIssue.addMultipleIssue(i,savedataclient);
 	}
 }

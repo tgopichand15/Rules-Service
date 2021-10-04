@@ -1,14 +1,14 @@
-package com.example.RulesService.client;
+package com.example.client;
 
 import com.example.RulesService.entities.ExistingIssues;
-import com.example.RulesService.util.HibernateUtil;
+import com.example.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import java.util.*;
 
 
-public class SaveDataClientTest {
+public class SaveDataClient {
 
 	/*public static void main(String[] args) {
 		try(Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -18,10 +18,10 @@ public class SaveDataClientTest {
 			}
 		} catch (HibernateException e) {
 			e.printStackTrace();
-		}*/
+		}
 
 
-	}
+	}*/
 
 	private static void createEmployee(Session session) {
 		session.beginTransaction();
@@ -53,7 +53,36 @@ public class SaveDataClientTest {
 		ExistingIssues issues=new ExistingIssues();
 		issues.setIssueName("MemoryUnix");
 		issues.setTeamName("Unix");
-		issues.setCount(20);
+		issues.setCount(5);
 		return issues;
+	}
+
+
+	public static void addExistingIssue(ExistingIssue i){
+		try(Session session = HibernateUtil.getSessionFactory().openSession()) {
+			session.beginTransaction();
+			int id=(Integer)session.save(i);
+			System.out.println("Existing Issue is created  with Id::"+id);
+			session.getTransaction().commit()
+
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void addExistingIssues(List<ExistingIssue> l){
+		try(Session session = HibernateUtil.getSessionFactory().openSession()) {
+			session.beginTransaction();
+			for(ExistingIssue e : l) {
+				int id = (Integer) session.save(e);
+				System.out.println("Existing Issue is created  with Id::" + id);
+				session.getTransaction().commit()
+			}
+
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
+
 	}
 }
