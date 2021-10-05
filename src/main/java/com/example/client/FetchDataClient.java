@@ -5,9 +5,10 @@ import com.example.util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import com.example.RulesService.SaveDataClient;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -15,19 +16,19 @@ public class FetchDataClient {
 
 
 
-       public static int getCount(String issueName,String teamName){
+       public static ExistingIssue getCount(String issueName,String teamName){
            try(Session session = HibernateUtil.getSessionFactory().openSession()) {
                Query query = session.createQuery("FROM ExistingIssue i WHERE i.issueName=:issueName and i.teamName=:teamName");
                query.setParameter("issueName", issueName);
                query.setParameter("teamName",teamName);
                session.beginTransaction();
                session.getTransaction().commit();
-               return ((ExistingIssue)query.uniqueResult()).count;
+               return ((ExistingIssue)query.uniqueResult());
            } catch (HibernateException e) {
                e.printStackTrace();
            }
 
-           return -1;
+           return null;
 	    }
 
 
@@ -43,6 +44,14 @@ public class FetchDataClient {
             }
         return null;
         }
+
+    @Autowired
+    static SaveDataClient s;
+
+
+    public static void main(String[] args){
+        System.out.println("Savedataclient object is "+s);
+    }
 
 
     }

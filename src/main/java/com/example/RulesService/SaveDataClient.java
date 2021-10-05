@@ -1,4 +1,4 @@
-package com.example.client;
+package com.example.RulesService;
 
 import com.example.entities.ExistingIssue;
 import com.example.util.HibernateUtil;
@@ -12,22 +12,10 @@ import java.util.*;
 
 
 
-@Component
-@ComponentScan("com.example.client")
+@Component("Test")
+@ComponentScan(basePackages={"com.example.RulesService"})
 public class SaveDataClient {
 
-	/*public static void main(String[] args) {
-		try(Session session = HibernateUtil.getSessionFactory().openSession()) {
-			List<ExistingIssues> l=getexistingIssues();
-			for(int i=0;i<l.size();i++){
-				System.out.println(l.get(i).toString());
-			}
-		} catch (HibernateException e) {
-			e.printStackTrace();
-		}
-
-
-	}*/
 
 	private static void createEmployee(Session session) {
 		session.beginTransaction();
@@ -92,10 +80,12 @@ public class SaveDataClient {
 
 	}
 
-	public SaveDataClient(){
-		System.out.println("Test");
+	public void Test(){
+		System.out.println("Savedataclient object created");
 	}
 
-
-
+	@Override
+	public String toString() {
+		return "SaveDataClient{}";
+	}
 }

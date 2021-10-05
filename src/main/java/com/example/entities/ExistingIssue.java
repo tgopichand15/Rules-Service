@@ -15,7 +15,7 @@ public class ExistingIssue {
     private String issueName;
 
     @Column(name="issue_frequency_for_ticket_creation")
-    public int count;
+    private int count;
 
     public int getId() {
         return id;
