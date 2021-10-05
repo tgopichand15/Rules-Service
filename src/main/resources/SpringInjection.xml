@@ -10,6 +10,16 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
         </property>
     </bean>
 
-    <bean id="savedataclient" class="com.example.RulesService.SaveDataClient" />
+    <bean id="savedataclient" class="com.example.client.SaveDataClient" />
+
+
+    <!--<bean id="RulesServiceController" class="com.example.RulesService.AddExistingIssue">
+        <property name="k">
+            <ref bean="fetchdataclient" />
+        </property>
+    </bean>
+
+    <bean id="fetchdataclient" class="com.example.client.FetchDataClient" />-->
+
 
 </beans>

@@ -1,4 +1,4 @@
-package com.example.RulesService;
+package com.example.client;
 
 import com.example.entities.ExistingIssue;
 import com.example.util.HibernateUtil;
@@ -13,7 +13,7 @@ import java.util.*;
 
 
 @Component("Test")
-@ComponentScan(basePackages={"com.example.RulesService"})
+@ComponentScan(basePackages={"com.example.client"})
 public class SaveDataClient {
 
 

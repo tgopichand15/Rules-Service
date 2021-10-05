@@ -1,5 +1,6 @@
 package com.example.RulesService;
 
+import com.example.client.SaveDataClient;
 import com.example.entities.ExistingIssue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -52,43 +53,6 @@ public class AddExistingIssue {
     }
 
 
-
-    //System.out.println("savedataclient outside is " + savedataclient);
-    //public static void main(String[] args){
-
-        /*ExistingIssue i=new ExistingIssue();
-        i.setIssueName("CPU");
-        i.setTeamName("Wintel");
-        i.setCount(5);*/
-
-
-
-      //  AddExistingIssue a=new AddExistingIssue();
-
-       //System.out.println("object is "+a.getK());
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //System.out.println("s is "+t);
-     //  System.out.println("savedataclient is " + savedataclient);
-
-        //System.out.println(a);
-
-        //a.addIssue(i,savedataclient);
-        //AddExistingIssue a=new AddExistingIssue();
-        //a.test();
-
-   // }
 
     }
 
